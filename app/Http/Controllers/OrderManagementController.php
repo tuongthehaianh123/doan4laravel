@@ -150,9 +150,9 @@ class OrderManagementController extends Controller
            
             </style>
          
-            <span>Hoa quả sạch </span><br>
-           <span ><span style="font-size: 33pt;  font-family: Georgia, serif">Fuji Fruit </span> <span style="margin-left:180px;font-size: 28pt;"> Hóa đơn bán lẻ</span></span><br>
-            <p>HotLine: 0981331137 <span style="margin-left:200px;"> Fanpage: FujiFruit-Hoaquasach</p>';
+            
+           <span ><span style="font-size: 33pt;  font-family: Georgia, serif">Remmy </span> <span style="margin-left:180px;font-size: 28pt;"> Hóa đơn bán lẻ</span></span><br>
+            <p>HotLine: 0981331137 <span style="margin-left:200px;"> Fanpage: Remmy.com.vn</p>';
          $output.='<span >Tên Khách hàng: '.$bil->cus->name.'</span>
                    <span style=" margin-left:100px;">  <span> Số điện thoại:</span>  '.$bil->cus->phone_number.'</span> <br>
                     <span style=" line-height: 20px">Địa chỉ: '.$bil->cus->address.'</span>
@@ -167,7 +167,7 @@ class OrderManagementController extends Controller
                        
                         <th>Tên sản phẩm</th>
                      <th>Số lượng</th>
-                      <th>DVT</th>
+         
                         <th>Giá bán </th>
                         <th>Thành tiền </th>
                 </tr>
@@ -184,7 +184,7 @@ class OrderManagementController extends Controller
                         <td><center> '.$item->sp->name.'</center></td>
                        
                           <td><center>  X'.$item->quantity.'</center></td>
-                          <td></td>
+                       
                           <td><span style=" float: right">  '.number_format($item->unit_price).'đ&nbsp;đ</span></td>
                           <td><span style=" float: right">   '.number_format($item->unit_price*$item->quantity).'đ&nbsp;đ</span></td>
 
@@ -197,15 +197,16 @@ class OrderManagementController extends Controller
             </table>';
     
              $output.='
-                    <span>Ghi chú:  <h4>Free Ship:100%</h4></span> <span style=" color:#d80707;float: right">Tổng thành tiền:&nbsp;  <h4>Payment Total:'.number_format($bil->total).'đ</h4>&nbsp;đ</span>
+               <span>Ghi chú :'.$bil->note.'
+                 <h4>Free Ship:100%</h4></span> <span style=" color:#d80707;float: right">Tổng thành tiền:&nbsp;  <h4>Payment Total:'.number_format($bil->total).'đ</h4>&nbsp;</span>
                     <p>
-<span style=" font-style: oblique;">Thành tiền (Bằng chữ):....................................................................................................<br>........................................................................................................................................</span></p>
-                    <p><span style=" font-style: oblique;">"Sản phẩm được bảo hành từ 24-48h tùy loại.
+                <span style=" font-style: oblique;">  <p><br>Thành tiền (  Bằng chữ):........................................................................................................................................<br>........................................................................................................................................</span></p>
+                    <p><span style=" font-style: oblique;">"Sản phẩm được bảo hành 1 đổi 1 trong 7 ngày.
                     <span style="margin-left:75px">Ngày.....tháng.....năm......</span>
                     <br> Quý khách vui lòng mang theo hóa đơn
                  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Người lập hóa đơn</span>
                  <br> và hàng hóa bị lỗi đến để được bảo hành."</span>
-                 <h4 style=" ">Hoa quả Fuji rất hân hạnh được đón tiếp!<h4></p>
+                 <h4 style=" ">Remmy rất hân hạnh được đón tiếp!<h4></p>
                     ';
 
             return $output;

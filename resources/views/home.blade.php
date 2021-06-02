@@ -97,7 +97,7 @@
                     @foreach($sanpham as $item)
                      <div class="product-item">
                             <div class="pi-pic">
-                               <a href="{{route('chitietsanpham',$item->id)}}"> <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" ></a>
+                               <a href="{{route('chitietsanpham',$item->id)}}"> <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" height= "400px" ></a>
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
                                 </div>
@@ -182,7 +182,7 @@
                      <div class="product-item">
                             <div class="pi-pic">
                          
-                            <a href="{{route('chitietsanpham',$item->id)}}">  <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt=""  > </a>
+                            <a href="{{route('chitietsanpham',$item->id)}}">  <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" height= "400px" > </a>
                                
                                 <div class="icon">
                                     <i class="icon_heart_alt"></i>
