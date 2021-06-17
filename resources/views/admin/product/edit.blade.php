@@ -17,6 +17,7 @@
       </div>
       <div class="form-group">
         <label for="">Miêu Tả </label>
+        
         <input type="text"value="{{$product->description}}" class="form-control" id="" name="description" placeholder="">
       </div>
       <div class="form-group">

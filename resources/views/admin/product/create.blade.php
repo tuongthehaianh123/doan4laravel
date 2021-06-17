@@ -24,6 +24,7 @@
         <label for="">Đơn giá </label>
         <input type="text" class="form-control" id="" name="unit_price" placeholder="">
       </div>
+    
       <div class="form-group">
         
         <label>Hình Ảnh</label>

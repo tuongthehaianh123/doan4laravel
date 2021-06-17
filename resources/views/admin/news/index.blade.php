@@ -60,7 +60,7 @@
             {{$item->title}}
             </td>
             <td>
-            {{$item->content}}
+            {!!$item->content!!}
             </td>
 
             <td>

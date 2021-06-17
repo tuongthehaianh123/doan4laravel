@@ -42,7 +42,8 @@
                             </div>
                             <div class="ci-text">
                                 <span>Address:</span>
-                                <p>60-49 Road 11378 New York</p>
+                                <p>TRỤ SỞ CHÍNH: 48 PHỐ HUẾ- TP. HÀ NỘI
+                                 VĂN PHÒNG GIAO DỊCH: 444 XÃ ĐÀN - ĐỐNG ĐA - TP. HÀ NỘI</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -51,7 +52,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Phone:</span>
-                                <p>+65 11.188.888</p>
+                                <p>0354647556</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -60,33 +61,38 @@
                             </div>
                             <div class="ci-text">
                                 <span>Email:</span>
-                                <p>hellocolorlib@gmail.com</p>
+                                <p>vuduyhaianh.123@gmail.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
+              
                 <div class="col-lg-6 offset-lg-1">
                     <div class="contact-form">
+                    <form action="{{route('home.Signin')}}" method="post" class="checkout-form">
+                    {{csrf_field()}}
                         <div class="leave-comment">
                             <h4>Leave A Comment</h4>
                             <p>Our staff will call back later and answer your questions.</p>
                             <form action="#" class="comment-form">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Your name">
+                                        <input type="text" name="fullname" placeholder="Your name">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Your email">
+                                        <input type="text" name="email" placeholder="Your email">
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea placeholder="Your message"></textarea>
+                                        <textarea name="Cmt" placeholder="Your message"></textarea>
                                         <button type="submit" class="site-btn">Send message</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        </form>
                     </div>
                 </div>
+              
             </div>
         </div>
     </section>

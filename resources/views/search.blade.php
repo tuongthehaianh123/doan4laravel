@@ -163,7 +163,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
-                                        <a href="{{route('chitietsanpham',$item->id)}}"><img src="{{url('public/Home/imges')}}/{{$item->image}}" alt=""></a>
+                                        <a href="{{route('chitietsanpham',$item->id)}}"><img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" height= "300px"></a>
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
@@ -180,7 +180,7 @@
                                             <h5>Pure Pineapple</h5>
                                         </a>
                                         <div class="product-price">
-                                        {{number_format($item->unit_price)}} VND
+                                        {{number_format($item->unit_price)}}đ
                                             <span>$35.00</span>
                                         </div>
                                     </div>

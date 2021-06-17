@@ -17,10 +17,10 @@ class Homecontroller extends Controller
   
    
  public function index(){
-   
+  $data=Product::orderBy('id','DESC')->increment('new');
      $sanpham=Product::orderBy('id','DESC')->paginate(4);
      $type=ProductType::orderBy('id','DESC')->get()->take(10);
-     return view('home',compact ('sanpham','type'));
+     return view('home',compact ('sanpham','type','data'));
      
  }
 

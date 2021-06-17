@@ -165,7 +165,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
-                                        <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="">
+                                        <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" height= "300px">
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>

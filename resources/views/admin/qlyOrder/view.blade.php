@@ -83,6 +83,7 @@
             </th>
             <!-- <th>Tên sản phẩm</th> -->
             <th>Product Name </th>
+         
             <th>Quantity</th>
             <th>Price</th>
             <th>Total Money </th> 
@@ -97,6 +98,7 @@
            
             <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
             <td>{{$item->sp->name}}</td>
+           
             <td>{{$item->quantity}}</td>
             <td>{{number_format($item->unit_price)}}đ</td>
             <td>{{number_format($item->unit_price*$item->quantity)}}đ</td>

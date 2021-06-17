@@ -11,7 +11,7 @@ class Product extends Model
     public $timestamps = false;
     protected $table="products";    
     use HasFactory;
-    protected $fillable = ['name','description','id_type','unit_price','image','image1','image2','image3'];//them
+    protected $fillable = ['name','description','id_type','unit_price','image','image1','image2','image3','new','updated_at'];//them
     public function product_type(){
         return $this->belongsTo('App\ProductType','id_type','id');
     }

@@ -1,30 +1,26 @@
 
 @extends('layout.admin')
 @section('main')
-<form role="form" action="{{route('producttype.store')}}" method="post">
-     @csrf
+<form role="form" action="{{route('producttype.update',$producttype->id)}}" method="post">
+     @csrf @method('PUT')
     <div class="form-group">
         <input type="hidden" class="form-control" id="" name="" placeholder="">
       </div>
       <div class="form-group">
         <label for="">tên loại</label>
-        <input type="text" value="{{$productType->nametype}}" class="form-control" id="name"name="name" placeholder="">
+        <input type="text" value="{{$producttype->nametype}}"  class="form-control" id="name" name="nametype" placeholder="">
        
       </div>
-      <div class="form-group"> 
+      <div class="form-group">
         <label for="">mã </label>
-        <input type="text" value="{{$productType->id_type}}" class="form-control" id="type" name="id_type" placeholder="">
+        <input type="text" value="{{$producttype->id}}"  class="form-control" id="type" name="id" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" 
         <label for="">Miêu Tả </label>
-        <input type="text"  value="{{$productType->description}}" class="form-control" id="description" name="description" placeholder="">
+        <textarea type="text" value="{{$producttype->description}}"  class="form-control" id="" name="description" ></textarea>
+        <script type="text/javascript"> CKEDITOR.replace('description')</script> 
       </div>
-      
-      <div class="form-group">
-        
-        <label>Hình Ảnh</label>
-        <input type="file" id="image" name="image" />
-      </div>
+     
       <div class="form-group">
         
         <p class="help-block">Example block-level help text here.</p>

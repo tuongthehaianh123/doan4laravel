@@ -4,17 +4,20 @@
 <form role="form" action="{{route('news.store')}}" method="post">
      @csrf
     <div class="form-group">
-        <input type="int" class="form-control" id="" name="id" placeholder="">
+        <input type="text" class="form-control" id="" name="id" placeholder="">
       </div>
       <div class="form-group">
         <label for="">Title</label>
         <input type="text" class="form-control" id=""name="title" placeholder="">
        
       </div>
-      <div class="form-group">
-        <label for="">Content</label>
-        <input type="text" class="form-control" id="" name="content" placeholder="">
+     
+       <div class="form-group" 
+        <label for="">Content </label>
+        <textarea type="text" class="form-control" id="" name="content" ></textarea>
+        <script type="text/javascript"> CKEDITOR.replace('content')</script> 
       </div>
+   
      
      
       <div class="form-group">

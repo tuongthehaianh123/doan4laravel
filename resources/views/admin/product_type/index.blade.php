@@ -63,7 +63,7 @@
             </td>
 
             <td>
-            {{$item->description}}
+            {!!$item->description!!}
             </td>
 
             <!-- <td>

@@ -65,9 +65,9 @@
                         </select>
                     </div>
                     <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
+                        <a target="_blank"  href="https://www.facebook.com/yeuthoo/"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/haibin_1/"><i class="ti-linkedin"></i></a>
                         <a href="#"><i class="ti-pinterest"></i></a>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                                 </div>
                               
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">{{number_format(Cart::subtotal(0,'.',''))}}đ</li>
                         </ul>
                     </div>
                 </div>
@@ -219,12 +219,17 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="{{url('public/site')}}/img/footer-logo.png" alt=""></a>
+                        <a href="{{route('home.index')}}">
+                            
+                            <img src="https://storage.googleapis.com/cdn.nhanh.vn/store/882/store_1486693237_882.png" alt="LOGO" style="
+    margin: -12px 0px 0px 3px; background: black; width: 138px;
+">
+                            </a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
+                            <li>Address: TRỤ SỞ CHÍNH: 48 PHỐ HUẾ- TP. HÀ NỘI VĂN PHÒNG GIAO DỊCH: 444 XÃ ĐÀN - ĐỐNG ĐA - TP. HÀ NỘI</li>
+                            <li>Phone:+0354647556</li>
+                            <li>Email:Vuduyhaianh.123@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>

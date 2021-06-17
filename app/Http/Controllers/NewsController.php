@@ -5,7 +5,7 @@ use App\Models\ProductType;
 
 use App\Models\News;
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class NewsController extends Controller
 {
     /**
@@ -107,6 +107,7 @@ class NewsController extends Controller
 //lien he
     public function getContact(){
         $type=ProductType::orderBy('id','DESC')->get();
-        return view('lienhe',compact('type'));
+        $contact=User::orderBy('id','DESC')->get();
+        return view('lienhe',compact('type','contact'));
     }
 }

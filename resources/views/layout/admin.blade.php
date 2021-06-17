@@ -50,6 +50,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
 <div class="wrapper">
+ 
 
   <header class="main-header">
     <!-- Logo -->
@@ -57,7 +58,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg"><b>Hải  Bin</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -158,7 +159,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="{{url('public/thumucadmin')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Hải Bin</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -217,7 +218,7 @@
           <img src="{{url('public/thumucadmin')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Hải Bin</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -233,7 +234,7 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-    
+     
       <ul class="sidebar-menu" data-widget="tree">
       @foreach($menus as $u)
         <li class="treeview">
@@ -264,6 +265,15 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
+  
+
+    @if(Session::has("success"))
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      {{Session::get("success")}}
+    </div>
+    @endif
+     
     @yield('main')
     <!-- /.content -->
   </div>

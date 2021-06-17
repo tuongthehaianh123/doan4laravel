@@ -4,6 +4,7 @@ return[
         'label'=>'dashboard',
         'route'=>'admin.dashboard',
         'icon'=>'fa fa-file'
+        
     ],
       [
         'label'=>'Order Management ',

@@ -38,7 +38,7 @@
                 Description
             </td>
             <td>
-            updated_at 
+            Create_at 
             </td>
                       
             <td>
@@ -68,10 +68,10 @@
             </td>
 
             <td style="color: red;">
-            {!! $item->description !!}
+            {!! \Illuminate\Support\Str::limit($item->description,150, $end='...') !!}
             </td>
            <td>
-            {{$item->updated_at}}
+            {{$item->created_at}}
             </td>
             <td style="color: red;">
             {{number_format($item->unit_price)}}đ

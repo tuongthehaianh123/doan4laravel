@@ -63,9 +63,9 @@ class ProductTypeController extends Controller
      * @param  \App\Models\ProductType  $productType
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductType $productType)
+    public function edit(ProductType $producttype)
     {
-        return view('admin.product_type.edit')->with(compact('productType'));
+        return view('admin.product_type.edit')->with(compact('producttype'));
 
          
      }
@@ -77,9 +77,11 @@ class ProductTypeController extends Controller
      * @param  \App\Models\ProductType  $productType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductType $productType)
+    public function update(Request $request, ProductType $producttype)
     {
-        
+       
+         $producttype->update($request->only('id','nametype','description'));
+        return  redirect()->route('producttype.index')->with('success','Đã thêm thành công.');
     }
 
     /**

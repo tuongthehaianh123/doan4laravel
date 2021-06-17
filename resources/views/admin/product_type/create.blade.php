@@ -15,12 +15,11 @@
         <label for="">mã </label>
         <input type="text" class="form-control" id="type" name="id_type" placeholder="">
       </div>
-      <div class="form-group">
+      <div class="form-group" 
         <label for="">Miêu Tả </label>
-        <input type="text" class="form-control" id="description" name="description" placeholder="">
-        <script type="text/javascript"> CKEDITOR.replace('description')</script>
+        <textarea type="text" class="form-control" id="" name="description" ></textarea>
+        <script type="text/javascript"> CKEDITOR.replace('description')</script> 
       </div>
-      
      
       <div class="form-group">
         

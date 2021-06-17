@@ -4,18 +4,20 @@
 <form role="form" action="{{route('news.update',$news->id)}}" method="post">
      @csrf @method('PUT')
     <div class="form-group">
-        <input type="int" class="form-control" id="" name="id" placeholder="">
+        <input type="text" value="{{$news->id}}" class="form-control" id="" name="id" placeholder="">
       </div>
       <div class="form-group">
-        <label for="">tên loại</label>
+        <label for="">title</label>
         <input type="text" value="{{$news->title}}" class="form-control" id=""name="name" placeholder="">
        
       </div>
-      <div class="form-group">
-        <label for="">mã </label>
-        <input type="text" value="{{$news->content}}" class="form-control" id="" name="content" placeholder="">
-      </div>
       
+      <div class="form-group" 
+        <label for="">Content </label>
+        <textarea type="text" value="{{$news->content}}" class="form-control" id="" name="content" ></textarea>
+        <script type="text/javascript"> CKEDITOR.replace('content')</script> 
+      </div>
+     
       <div class="form-group">
         
         <label>Hình Ảnh</label>
