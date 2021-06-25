@@ -38,6 +38,10 @@
                Address
             </td>
             <td>
+               
+            PassWord
+            </td>
+            <td>
             Phone
             </td>
                       
@@ -70,6 +74,9 @@
             <td>
             {{$item->address}}
             </td>
+            <td>
+            {{$item->password}}
+            </td>
            <td>
             {{$item->phone_number}}
             </td>
@@ -84,12 +91,20 @@
             <i class="fa fa-trash"></i>
             </a>
             </td>
+            
            
           
         
         </tr>
         
         @endforeach
+        <hr>
+              <div class="">
+            {{$data->appends(request()->all())->links()}}
+            
+<!-- phan trang -->
+        </div>
+
         </tbody>
        
         </div>

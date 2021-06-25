@@ -182,7 +182,7 @@
                                             <h5>Pure Pineapple</h5>
                                         </a>
                                         <div class="product-price">
-                                        {{number_format($item->unit_price)}} VND
+                                        {{number_format($item->unit_price)}}$
                                             <span>$35.00</span>
                                         </div>
                                     </div>

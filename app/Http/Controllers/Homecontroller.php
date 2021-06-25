@@ -7,6 +7,7 @@ use App\Models\User;
 use Hash;
 use Session;
 use Auth;
+use App\Models\Customer;
 
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -17,8 +18,8 @@ class Homecontroller extends Controller
   
    
  public function index(){
-  $data=Product::orderBy('id','DESC')->increment('new');
-     $sanpham=Product::orderBy('id','DESC')->paginate(4);
+  $data=Product::orderBy('id','DESC')->increment('new');//
+     $sanpham=Product::orderBy('id','DESC')->paginate(3);
      $type=ProductType::orderBy('id','DESC')->get()->take(10);
      return view('home',compact ('sanpham','type','data'));
      
@@ -88,25 +89,27 @@ public function getChitietsp(Request $req){
         'password.min'=>'Mat khau it nhat 6 ki tu'
 
       ]);
-      $user=new User();
-      $user->full_name=$req->fullname;
+      $user=new Customer();
+      $user->name=$req->fullname;
       $user->email=$req->email;
+      $user->gender=$req->gender;
       $user->password=Hash::make($req->password);
-      $user->phone=$req->phone;
+      $user->phone_number=$req->phone;
       $user->address=$req->address;
       $user->save();
    
     return redirect()->back()->with('thanhcong','Account successfully created ✅');
 }
  public function postLogin(Request $req){
+   
    $this->validate($req,
    [
-    'email'=>'required|email',  
+    'email'=>'required|email',    
     'password'=>'required|min:6|max:20'
     
    ],
    [
-    'email.required'=>'Vui long nhap email',
+    'email.required'=>'Vui long nhap email',  
     'email.email'=>'Khong dung dinh dang email',
     'password.required'=>'Vui long nhap password',
     're_password.sam'=>'Mat khau  khong giong nhau',
@@ -115,6 +118,7 @@ public function getChitietsp(Request $req){
     ]);
     $credentials=array('email'=>$req->email,'password'=>$req->password);
     if(Auth::attempt($credentials)){
+    (Auth::user()); 
       return redirect()->back()->with(['flag'=>'success','message'=>'Logged in successfully ✅']);
 
     }else{

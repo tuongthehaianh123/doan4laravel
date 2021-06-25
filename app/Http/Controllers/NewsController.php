@@ -89,7 +89,7 @@ class NewsController extends Controller
         
         $news->update($request->only('id','title','content','image'));
     
-        return  redirect()->route ('news.index')->with('success','Đã thêm thành công.');
+        return  redirect()->route ('news.index')->with('success','Added successfully. ');
     }
 
     /**
@@ -102,7 +102,7 @@ class NewsController extends Controller
     {
         $post =News::where('id',$id);
         $post->delete();
-          return redirect()->route('news.index')->with('success','Dữ liệu xóa thành công.');
+          return redirect()->route('news.index')->with('success','Data deleted successfully. ');
     }
 //lien he
     public function getContact(){

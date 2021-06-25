@@ -16,39 +16,53 @@
             <form action="{{route('dathang')}}"  method="post" class="checkout-form">
             {{csrf_field()}}
                 <div class="row">
+                <!-- @if(Auth::check())
+                <a href="{{route('home.logout')}}" class="login-panel" style >Log Out </a>
+                <a href="{{route('home.login')}}" class="login-panel" style >Hi:{{Auth::user()->full_name}}</a>
+                
+                 @else
+                 <a href="{{route('home.login')}}" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                @endif -->
+                <!-- @if(Auth::check())
+                <a href="{{route('home.login')}}" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                <a href="{{route('home.logout')}}" class="login-panel" style >Log Out </a>
+                @else -->
+                <!-- @endif -->
+                @if(Auth::check())
+               
                     <div class="col-lg-6">
                         <div class="checkout-content">
-                            <a href="#" class="content-btn">Click Here To Login</a>
+                            <a href="{{route('home.login')}}" class="content-btn">Click Here To Login</a>
                         </div>
                         <h4>Biiling Details</h4>
                         <div class="row">
                             <div class="col-lg-12">
                                 <label for="fir">Name<span>*</span></label>
-                                <input type="text" name="name" placeholder=" Ho va ten" require>
+                                <input type="text"  value="{{$kh->name}}" name="name" placeholder=" Ho va ten" require>
                             </div>
    
-                            <div class="col-lg-6">
+                            <div  class="col-lg-6">
                                 <label >Gender</label> 
-                                <input  id="gender" type="radio" class="input-radio" name="gender" checked="checked" style="width:10%"  value="nam" /><span style="margin-right: 10%">Nam</span> 
-                                <input  id="gender" type="radio" class="input-radio" name="gender" checked="checked" style="width:10%"  value="nữ" /><span style="margin-right: 10%">Nữ</span> 
-                               
+                                <input   value="{{$kh->gender}}"  id="gender" type="radio" class="input-radio" name="gender" checked="checked" style="width:10%"  value="nam" /><span style="margin-right: 10%">Nam</span> 
+                                <input  value="{{$kh->gender}}"   id="gender" type="radio" class="input-radio" name="gender" checked="checked" style="width:10%"  value="nữ" /><span style="margin-right: 10%">Nữ</span> 
+                  
                             </div>
                             <div class="col-lg-12">
                                 <label for="street"> Address<span>*</span></label>
-                                <input type="text" id="street" class="street-first" name="address">
+                                <input    value="{{$kh->address}}" type="text" id="street" class="street-first" name="address">
                                 
                             </div>
                             <div class="col-lg-6">
                                 <label for="email">Email Address<span>*</span></label>
-                                <input type="text" id="email" name="email">
+                                <input  value="{{$kh->email}}"  type="text" id="email" name="email">
                             </div>
                             <div class="col-lg-6">
                                 <label for="phone">Phone<span>*</span></label>
-                                <input type="text" id="phone" name="phone">
+                                <input  value="{{$kh->phone_number}}"  type="text" id="phone" name="phone">
                             </div>
                             <div class="col-lg-12">
                                 <label for="town">Not<span>*</span></label>
-                                <input type="text" id="town" name="not">
+                                <input   value="{{$kh->note}}" type="text" id="town" name="not">
                             </div>
                            
                             <div class="col-lg-12">
@@ -62,9 +76,15 @@
                             </div>
                         </div>
                     </div>
+                    @else
+                    <div class="checkout-content">
+                            <a href="{{route('home.Signin')}}" class="content-btn">Click Here To Singnin</a>
+                        </div>
+                    @endif
+                
                     <div class="col-lg-6">
-                        <div class="checkout-content">
-                            <input type="text" placeholder="Enter Your Coupon Code">
+                    <div class="checkout-content">
+                            <a href="{{route('home.login')}}" class="content-btn">Click Here To Login</a>
                         </div>
                         <div class="place-order">
                             <h4>Your Order</h4>
@@ -74,11 +94,18 @@
                                     <li>Product <span>Total</span></li>
                                     @foreach(Cart::Content() as $item)
 
-                                    <li class="fw-normal"><img src="{{url('public/Home/imges')}}/{{$item->options->img}}" width="50px" alt=""> {{$item->name}} x{{$item->qty}} <span> {{number_format($item->price)}}đ</span></li>
+                                    <li class="fw-normal"><img src="{{url('public/Home/imges')}}/{{$item->options->img}}" width="50px" alt=""> {{$item->name}} x{{$item->qty}} <span> {{number_format($item->price)}}</span></li>
                                     @endforeach
-                                    <li class="total-price">Total <span>{{number_format(Cart::subtotal(0,'.',''))}}đ</span></li>
+                                    <li class="total-price">Total <span>{{number_format(Cart::subtotal(0,'.',''))}}$</span></li>
                                 </ul>
                                 <div class="payment-check">
+                                <div class="">
+                                        <label for="pc-check">
+                                       *Address:Headquarters: 48 HUE STREET - City HANOI TRANSACTION OFFICE: 444 Commune DAAN - DONG DA - City. HANOI
+                                            
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
                                     <div class="pc-item">
                                         <label for="pc-check">
                                         Payment on delivery

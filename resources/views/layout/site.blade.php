@@ -49,7 +49,7 @@
                 <div class="ht-right">
                 @if(Auth::check())
                 <a href="{{route('home.logout')}}" class="login-panel" style >Log Out </a>
-                <a href="{{route('home.login')}}" class="login-panel" style >Hi:{{Auth::user()->full_name}}</a>
+                <a href="{{route('view-Odercustomer')}}" class="login-panel" style >Hi:{{Auth::user()->name}}</a>
                 
                  @else
                  <a href="{{route('home.login')}}" class="login-panel"><i class="fa fa-user"></i>Login</a>
@@ -148,17 +148,17 @@
                                     <a href="{{asset('delete/all')}}" class="primary-btn view-card">Delete All</a>
                                      <div class="select-total">
                                         <span>total:</span>
-                                        <h5>{{number_format(Cart::subtotal(0,'.',''))}}đ</h5>
+                                        <h5>{{number_format(Cart::subtotal(0,'.',''))}}$</h5>
                                         
                                     </div>
                                     <div class="select-button">
                                         <a href="{{route('save-cart')}}" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                        <a href="{{route('dathang')}}" class="primary-btn checkout-btn">CHECK OUT</a>
                                     </div>
                                 </div>
                               
                             </li>
-                            <li class="cart-price">{{number_format(Cart::subtotal(0,'.',''))}}đ</li>
+                            <li class="cart-price">{{number_format(Cart::subtotal(0,'.',''))}}$</li>
                         </ul>
                     </div>
                 </div>
@@ -192,7 +192,6 @@
                         <li><a href="{{route('contact')}}">Contact</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="dropdown">
-                                <li><a href="./blog-details.html">Blog Details</a></li>
                                 <li><a href="./shopping-cart.html">Shopping Cart</a></li>
                                 <li><a href="./check-out.html">Checkout</a></li>
                                 <li><a href="./faq.html">Faq</a></li>
@@ -207,7 +206,12 @@
         </div>
     </header>
     <!-- Header End -->
-
+    @if(Session::has("thongbao"))
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      {{Session::get("thongbao")}}
+    </div>
+    @endif
     <!-- Hero Section Begin -->
     @yield('main')
     <!-- Partner Logo Section End -->
@@ -227,7 +231,7 @@
                             </a>
                         </div>
                         <ul>
-                            <li>Address: TRỤ SỞ CHÍNH: 48 PHỐ HUẾ- TP. HÀ NỘI VĂN PHÒNG GIAO DỊCH: 444 XÃ ĐÀN - ĐỐNG ĐA - TP. HÀ NỘI</li>
+                            <li>Address: :Headquarters: 48 HUE STREET - City HANOI TRANSACTION OFFICE: 444 Commune DAAN - DONG DA - City. HANOI</li>
                             <li>Phone:+0354647556</li>
                             <li>Email:Vuduyhaianh.123@gmail.com</li>
                         </ul>

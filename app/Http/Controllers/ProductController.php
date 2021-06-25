@@ -42,7 +42,7 @@ class ProductController extends Controller
         
         Product::create($request->all());
   
-       return  redirect()->route ('product.index')->with('success','Đã thêm thành công.');
+       return  redirect()->route ('product.index')->with('success','Added more success ');
     }
 
     /**
@@ -78,7 +78,7 @@ class ProductController extends Controller
     {
         $product->update($request->only('name','id_type','description','unit_price','image','image1','image2','image3','updated_at'));
     
-        return  redirect()->route ('product.index')->with('success','Đã thêm thành công.');
+        return  redirect()->route ('product.index')->with('success','Added more success .');
     }
 
     /**
@@ -95,7 +95,7 @@ class ProductController extends Controller
         // }
         $post =product::where('id',$id);
         $post->delete();
-          return redirect()->route('product.index')->with('success','Dữ liệu xóa thành công.');
+          return redirect()->route('product.index')->with('success','Data deleted successfully. .');
     }
 
   

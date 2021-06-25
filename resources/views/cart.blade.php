@@ -37,7 +37,7 @@
                                     <td class="cart-title first-row">
                                         <h5>{{$item->name}}</h5>
                                     </td>
-                                    <td class="p-price first-row">{{number_format($item->price)}}đ</td>
+                                    <td class="p-price first-row">{{number_format($item->price)}}$</td>
                                     <td class="qua-col first-row">
                                         <div class="quantity">  
                                         <form action=" {{URL::to('/update-cart-quantity')}}" method="POST">
@@ -51,7 +51,7 @@
                                             </form>
                                         </div>
                                     </td>
-                                    <td class="total-price first-row">{{number_format($item->price*$item->qty)}}đ</td>
+                                    <td class="total-price first-row">{{number_format($item->price*$item->qty)}}$</td>
                                     <td class="close-td first-row" ><a href="{{route('delete',$item->rowId,$item->qty)}}">
                                     <i class="ti-close" style="color: black;"></i>
                                     </a></td>
@@ -79,7 +79,7 @@
                             <div class="proceed-checkout">
                                 <ul>
                                   
-                                    <li class="cart-total">Total <span>{{number_format(Cart::subtotal(0,'.',''))}}đ</span></li>
+                                    <li class="cart-total">Total <span>{{number_format(Cart::subtotal(0,'.',''))}}$</span></li>
                                 </ul>
                                 <a href="{{route('dathang')}}" class="proceed-btn">PROCEED TO CHECK OUT</a>
                             </div>

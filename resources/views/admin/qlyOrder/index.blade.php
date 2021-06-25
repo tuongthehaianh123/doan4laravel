@@ -91,7 +91,13 @@
        @csrf @method('DELETE')
 
        </form>
-    
+       <hr>
+              <div class="">
+            {{$bill->appends(request()->all())->links()}}
+            
+<!-- phan trang -->
+        </div>
+
 
 
 @stop()

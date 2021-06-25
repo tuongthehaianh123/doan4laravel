@@ -13,9 +13,12 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
+    
+     * 
      * @var array
      */
+ protected $table='customer'; //sử dụng sang bảng khác chê độ login
+
     protected $fillable = [
         'name',
         'email',

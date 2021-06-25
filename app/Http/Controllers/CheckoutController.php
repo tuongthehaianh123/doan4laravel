@@ -9,14 +9,15 @@ use App\Models\Customer;
 use App\Models\Bill; 
 use App\Models\BillDetail;
 use Session;
-
+use Auth;
 use Cart;
 
 class CheckoutController extends Controller
 {
     public function getcheckout(){
         $type=ProductType::orderBy('id','DESC')->get();
-        return view('dathang',compact('type'));
+        $kh=Customer::orderBy('id','DESC')->first();
+        return view('dathang',compact('type','kh'));
     }
     public function postcheckout(Request $req){
         $cart =Session::get('cart');
@@ -31,6 +32,9 @@ class CheckoutController extends Controller
          $customer->save();
 
          $bill = new Bill;
+         if (Auth::check())
+     $bill->id_customer=Auth::user()->id;
+         else
          $bill->id_customer= $customer->id;
          $bill->date_order= date('Y-m-d');
          $bill->total=(Cart::subtotal(0,'.',''));
@@ -38,6 +42,7 @@ class CheckoutController extends Controller
          $bill->note=$req->not;
          $bill->oder_status="Đang chờ xử lý";
          $bill->save();
+        
 
          foreach (Cart::Content() as $item) {
             $bill_detail=new BillDetail;
@@ -49,7 +54,8 @@ class CheckoutController extends Controller
             }
            
             Session::forget('cart');
-            return redirect()->back()->with('thongbao','dat  hang thanh cong');
+            return redirect()->back()->with('thongbao','Order Success! ');
         
     }
+
 }

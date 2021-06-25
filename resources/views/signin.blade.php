@@ -43,6 +43,10 @@
                                 <input type="text" name="address">
                             </div>
                             <div class="group-input">
+                                <label for="username"> Gender *</label>
+                                <input type="text" name="gender">
+                            </div>
+                            <div class="group-input">
                                 <label for="username"> Phone *</label>
                                 <input type="text" name="phone">
                             </div>

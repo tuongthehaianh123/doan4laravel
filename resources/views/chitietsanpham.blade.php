@@ -160,25 +160,9 @@
                                 </div>
                                 <div class="pd-desc">
                                     <p>{!! $sanpham->description !!}</p>
-                                    <h4>     {{number_format($sanpham->unit_price)}} VND <span>629.99</span></h4>
+                                    <h4>     {{number_format($sanpham->unit_price)}} $ <span>100,000 $ </span></h4>
                                 </div>
-                                <div class="pd-color">
-                                    <h6>Color</h6>
-                                    <div class="pd-color-choose">
-                                        <div class="cc-item">
-                                            <input type="radio" id="cc-black">
-                                            <label for="cc-black"></label>
-                                        </div>
-                                        <div class="cc-item">
-                                            <input type="radio" id="cc-yellow">
-                                            <label for="cc-yellow" class="cc-yellow"></label>
-                                        </div>
-                                        <div class="cc-item">
-                                            <input type="radio" id="cc-violet">
-                                            <label for="cc-violet" class="cc-violet"></label>
-                                        </div>
-                                    </div>
-                                </div>
+                  
                                 <div class="pd-size-choose">
                                     <div class="sc-item">
                                         <input type="radio" id="sm-size">
@@ -188,14 +172,7 @@
                                         <input type="radio" id="md-size">
                                         <label for="md-size">m</label>
                                     </div>
-                                    <div class="sc-item">
-                                        <input type="radio" id="lg-size">
-                                        <label for="lg-size">l</label>
-                                    </div>
-                                    <div class="sc-item">
-                                        <input type="radio" id="xl-size">
-                                        <label for="xl-size">xs</label>
-                                    </div>
+                                   
                                 </div>
                                 <div class="quantity">
                                     <div class="pro-qty">
@@ -421,7 +398,7 @@
                                 <h5 id="spname">{{$sp->name}}</h5>
                             </a>
                             <div class="product-price">
-                               {{number_format($sp->unit_price)}} VND
+                               {{number_format($sp->unit_price)}} $
                             </div>
                         </div>
                     </div>

@@ -8,6 +8,7 @@ use App\Models\Customer;
 use App\Models\User;
 use App\Models\BillDetail;
 use App\Models\Product;
+use App\Models\ProductType  ;
 use Cart;
 use DB;
 use Hash;
@@ -23,7 +24,7 @@ class OrderManagementController extends Controller
      */
     public function index()
     {
-        $bill=Bill::orderBy('created_at','DESC')->paginate(4);
+        $bill=Bill::orderBy('created_at','DESC')->paginate(7);
         $cus=Customer::orderBy('id','DESC')->get()->take(10);
         return view('admin.qlyOrder.index',compact ('bill','cus'));
     }
@@ -43,7 +44,19 @@ class OrderManagementController extends Controller
     return view('admin.qlyOrder.view', compact('bd','sp','bil','cus'));      
          // return view('admin.qlyOrder.view');
      }
-
+     // xem gio hang
+     public function view_Odercustomer(){
+      
+        $bd=Bill::where("id",Auth::user()->id)->get();
+        $bil=Bill::where("id_customer",Auth::user()->id)->first();
+        $sp=Product::orderBy('id','DESC')->get();
+        $bdd= BillDetail::where('id_bill','DESC')->get();
+        $cus=Customer::orderBy('id','DESC')->get();
+        $type=ProductType::orderBy('id','DESC')->get();
+        return view('xemlaigio',compact ('bd','sp','cus','type','bil','bdd'));
+      
+       
+     }
   
 
     /**

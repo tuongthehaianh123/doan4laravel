@@ -79,6 +79,6 @@ Route:: group(['prefix' => 'admin'], function(){
 Route::get('/view-Oder/{id}','OrderManagementController@view_Oder');
 Route::get('/print-order/{code}','OrderManagementController@print_order');
 
+Route::get('/view-Odercustomer/','OrderManagementController@view_Odercustomer')->name('view-Odercustomer');
 
 
-     

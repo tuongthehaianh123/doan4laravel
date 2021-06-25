@@ -104,7 +104,7 @@ class CartController extends Controller
     {
         $product=Product::find($id);
         if($request->qty){
-            $qty = $request->qty;
+            $qty = $request->qty;   
         }
         else{
             $qty =1;
@@ -124,6 +124,6 @@ class CartController extends Controller
        Cart::add($cart);
       
     
-      return back()->with('thongbao','da mua hang'.$product->name.'thanh cong');
+      return back()->with('thongbao','Add Product: '.$product->name.' Success Go To Cart! ');
     }
 }

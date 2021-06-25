@@ -180,20 +180,15 @@
                                             <h5>Pure Pineapple</h5>
                                         </a>
                                         <div class="product-price">
-                                        {{number_format($item->unit_price)}}đ
-                                            <span>$35.00</span>
+                                        {{number_format($item->unit_price)}}$
+                                        <span>10000$</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             @endforeach
                     </div>
-                    <div class="loading-more">
-                        <i class="icon_loading"></i>
-                        <a href="#">
-                            Loading More
-                        </a>
-                    </div>
+                  
                     <div class="col-lg-5 col-md-5 text-right">
                                 <p>  {{$sanpham->links()}}</p>
                             </div>

@@ -82,7 +82,7 @@
                         <a href="#">Discover More</a>
                     </div>
                 </div>
-                <div class="col-lg-8 offset-lg-1">
+                <div class="col-lg-8 ">
                     <div class="filter-control">
                         <ul>
                             <li class="active">Clothings</li>
@@ -111,13 +111,39 @@
                                 <div class="catagory-name">Towel</div>
                                 <a href="#">
                                     <h5>{{$item->name}}</h5>
-                                </a>
+                                </a>    
                                 <div class="product-price">
-                               {{number_format($item->unit_price)}}đ
+                               {{number_format($item->unit_price)}}$
 
                                 </div>
                             </div>
                         </div>
+                     @endforeach
+                     @foreach($sanpham as $item)
+                     <div class="product-item">
+                            <div class="pi-pic">
+                               <a href="{{route('chitietsanpham',$item->id)}}"> <img src="{{url('public/Home/imges')}}/{{$item->image}}" alt="" height= "400px" ></a>
+                                <div class="icon">
+                                    <i class="icon_heart_alt"></i>
+                                </div>
+                                <ul>
+                                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                    <li class="quick-view   "><a href="{{route('addCart',['id' => $item->id])}}" >+ Add Cart</a></li>
+                                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="pi-text">
+                                <div class="catagory-name">Towel</div>
+                                <a href="#">
+                                    <h5>{{$item->name}}</h5>
+                                </a>    
+                                <div class="product-price">
+                               {{number_format($item->unit_price)}}$
+
+                                </div>
+                            </div>
+                        </div>
+                        
 
                      @endforeach
                     </div>
@@ -199,7 +225,7 @@
                                     <h5>{{$item->name}}</h5>
                                 </a>
                                 <div class="product-price">
-                               {{number_format($item->unit_price)}} VND
+                               {{number_format($item->unit_price)}} $
 
                                 </div>
                             </div>

@@ -15,7 +15,7 @@ class ProductTypeController extends Controller
     public function index()
     {
       
-        $data=ProductType::orderBy('created_at','DESC')->search()->paginate(3);
+        $data=ProductType::orderBy('created_at','DESC')->search()->get();
      
       return view('admin.product_type.index',compact('data'));  
     }
@@ -81,7 +81,7 @@ class ProductTypeController extends Controller
     {
        
          $producttype->update($request->only('id','nametype','description'));
-        return  redirect()->route('producttype.index')->with('success','Đã thêm thành công.');
+        return  redirect()->route('producttype.index')->with('success','Added successfully.');
     }
 
     /**
@@ -94,7 +94,7 @@ class ProductTypeController extends Controller
     {
       $post =productType::where('id',$id);
       $post->delete();
-        return redirect()->route('producttype.index')->with('success','Dữ liệu xóa thành công.');
+        return redirect()->route('producttype.index')->with('success','Data deleted successfully.');
      
     }
 }
