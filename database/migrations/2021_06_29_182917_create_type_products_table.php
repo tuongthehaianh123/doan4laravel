@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Sanpham extends Migration
+class CreateTypeProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class Sanpham extends Migration
      */
     public function up()
     {
-        Schema::create('sanpham', function (Blueprint $table) {
+        Schema::create('type_products', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('nametype', 100);
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class Sanpham extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sanpham');
+        Schema::dropIfExists('type_products');
     }
 }
